@@ -12,6 +12,7 @@ Now I will proceed to use this readme file to practise markdown file syntax'es.
 ***three asterisk for bold AND italics ???*** yessir.
 
 > ### Oo so these things are called blockquotes ?
+
 > damn alright, add a ">" symbol at the start of a paragraph for blockquotes.
 >> woah ">>" for a nested one ? damnn alright.  
 >> - Dashes asterisks and plus symbols for lists...  
@@ -42,6 +43,7 @@ The text to be linked are enclosed with [ ] immidiately followed by a ( ) to enc
 It can also be formatted like usual ***<https://www.markdownguide.org/basic-syntax/#links>***  
 
 ### Reference style links !?
+
 "formatted with two sets of brackets. The first set of brackets surrounds the text that should appear linked. The second set of brackets displays a label used to point to the link you’re storing elsewhere in your document."
 
 - *[Mr. White][1]*  
@@ -59,6 +61,7 @@ It can also be formatted like usual ***<https://www.markdownguide.org/basic-synt
 [3]: https://breakingbad.fandom.com/wiki/Gustavo_Fring "Even at my time their memes are dead already but I bet it lives on just like the franchise :)"
 
 ## WOAH IMAGES ???
+
 "To add an image, add an exclamation mark (!), followed by alt text in brackets, and the path or URL to the image asset in parentheses. You can optionally add a title in quotation marks after the path or URL."
 
 ![This will be the alt text](https://static.wikia.nocookie.net/gtawiki/images/7/70/CJ-GTASA.png/revision/latest?cb=20190612091918)
