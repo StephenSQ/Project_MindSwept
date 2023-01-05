@@ -1,12 +1,11 @@
-# Project_MindSwept edit
+# Project_MindSwept
 
-My first attempt in making a website which happens to be a simple minesweeper web game - first made in CodePen.
-
-I'm trying to put a copy of it in GitHub now in this repo as a means of practicing how to use GitHub(help I'm ded) bruh I don't know how to learn sht properly.
+My first attempt in making a complete website which happens to be a simple minesweeper web game - first made in CodePen.  
+This is a repo where I put a copy of it and I'm also using this to practice using Git and Github.  
+That's all I have to say, now I'll use this readme file to practice markdown syntax
 
 ## two dashes for a subheader huh ?
 
-Now I will proceed to use this readme file to practise markdown file syntax'es.  
 *one asterisk on both sides for italics ?* alright.  
 **double asterisk on both sides for bold ?** got it.  
 ***three asterisk for bold AND italics ???*** yessir.
@@ -35,9 +34,10 @@ woah how nice :)
 
 ## Alright. Now on to links :
 
-The text to be linked are enclosed with [ ] immidiately followed by a ( ) to enclose the link. Here's where I learned this :( ) 
+The text to be linked are enclosed with [ ] immidiately followed by a ( ) to enclose the link.  
+Here's where I learned this :( ) 
 [Markdown Syntax Guide](https://www.markdownguide.org/basic-syntax/#links "add a link title to appear upon hover with quotation marks :() HOW AMAZING IS THAT ?")  
-"To quickly turn a URL or email address into a link, enclose it in angle brackets. :"
+"To quickly turn a URL or email address into a link, enclose it in angle brackets." :
 <https://www.markdownguide.org/basic-syntax/#links>  
 <quandale008@goofyahh.com>  
 It can also be formatted like usual ***<https://www.markdownguide.org/basic-syntax/#links>***  
@@ -62,7 +62,7 @@ It can also be formatted like usual ***<https://www.markdownguide.org/basic-synt
 
 ## WOAH IMAGES ???
 
-"To add an image, add an exclamation mark (!), followed by alt text in brackets, and the path or URL to the image asset in parentheses. You can optionally add a title in quotation marks after the path or URL."
+"To add an image, add an exclamation mark ( ! ), followed by alt text in brackets, and the path or URL to the image asset in parentheses. You can optionally add a title in quotation marks after the path or URL."
 
 ![This will be the alt text](https://static.wikia.nocookie.net/gtawiki/images/7/70/CJ-GTASA.png/revision/latest?cb=20190612091918)
 
