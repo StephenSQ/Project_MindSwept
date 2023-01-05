@@ -1,11 +1,429 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Mindsweeper</title>
-    </head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <body>
-        <h1>Help</h1>
-    </body>
+    <title>MindSwept 2022 | A Minesweeper Webgame</title>
+
+    <meta name="description"    content="A simple minesweeper website web game originally made in C. Made by a noob programmer for fellow noobs to learn :)">
+    <meta name="keywords"       content="minesweeper, mindswept, website, game, html, css, js, c">
+    <meta name="author"         content="StephenSQ">
+
+    <link rel="stylesheet" href="mindswept.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=PT+Sans&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/2a11df392b.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <script src="mindswept.js"></script>
+    <div class="nav_bar">
+      <div class="seperate">
+        <div style="flex-flow: column;">
+          <div class="header">
+            <i class="fa-solid fa-land-mine-on"></i>
+            <div class="header-text">
+              <p>project</p>
+              <div id="mindswept">
+                <h1>m</h1>
+                <h1>i</h1>
+                <h1>n</h1>
+                <h1>d</h1>
+                <h1>s</h1>
+                <h1>W</h1>
+                <h1>e</h1>
+                <h1>p</h1>
+                <h1>t</h1>
+              </div>
+            </div>
+          </div>
+          <h5>premium mindnumbing experience</h5>
+        </div>
+        <!--NAV BAR ITEMS-->
+        <div class="nav_bar-items">
+          <!--NAV BAR BUTTON SECTION-->
+          <div class="nav_bar-buttons">
+            <button onclick="openTab(event, 'BACKGROUND')" class="tab"><i class="fa-solid fa-circle-info"></i> Background</button>
+            <button onclick="openTab(event, 'MANUAL')" class="tab"><i class="fa-solid fa-book"></i> Manual</button>
+            <button onclick="openTab(event, 'MINESWEEPER')" class="tab"><i class="fa-solid fa-gamepad"></i> [ PLAY ] <i class="fa-solid fa-gamepad"></i></button>
+  
+            <div id="STATS">
+              <h3>SECTOR <span class="SECTOR">X</span></h3>
+              <h3><span class="MINES">X</span> MINES DETECTED.</h3>
+              <button onclick="checkWin()">submit</button>
+              <h3>-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-</h3>
+              <p class="RESPONSES"></p>
+            </div>
+  
+            <button onclick="openTab(event, 'DEVELOPMENT')" class="tab"><i class="fa-solid fa-gears"></i> Development</button>
+            <button onclick="openTab(event, 'CREDITS')" class="tab"><i class="fa-solid fa-rectangle-list"></i> Credits & Sauces</button>
+          </div>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlc9WOutJIstIMtlz8op63lRo9ZqmQYL2-cQ&usqp=CAU" alt="secret01">
+          <!--CONTACTS SECTION-->
+          <div class="contacts">
+            <div>
+              <p><i class="fa-brands fa-instagram"></i> @sitrus_limau</p>
+              <a href="https://codepen.io/stephensq"><i class="fa-brands fa-codepen"></i> @StephenSQ</a>
+            </div>
+            <div>
+              <p style="color: #000000;">limau kuadrat</p>
+              <a href="https://codepen.io/MattXA25"><i class="fa-brands fa-codepen"></i> @MattXA25</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div id="NAV_CURTAIN">
+        <h3>sector <span class="SECTOR">X</span></h3>
+        <h3 class="RESPONSES"></h3>
+        <p class="RESPONSES"></p>
+        <button onclick="replay()">proceed</button>
+      </div>
+    </div>
+  
+    <div class="content-container">
+      <!--BACKGROUND TAB-->
+      <div class="content" id="BACKGROUND">
+        <div class="subcontent">
+          <h1>A SIMPLE GAME</h1>
+  
+          <p>Ah yes, <b><i>the Minesweeper.</i></b> What a classic retro video game. A simple puzzle game that simulates a risk-free minefield clearing experience. Once you've mastered it I bet you can clear out the minefield in the western deserts of Egypt in no time ;)</p>
+          <p>Compared to modern video games most people will definitely find it rather boring. But if you're a noob programmer maybe you've thought of trying to make this game since it seems <i>simple,</i> isn't it ? At least I do. At first I thought it's gonna be impossible for me to pull it off with my very limited knowledge on CS, but then 2D arrays are a thing <b>:()</b> - so maybe that's how I'm gonna make this game.</p>
+          <p>And so begins my journey to remake a <i>mindfield clearing Sim...</i> Well, it took me a week of mindnumbing work to code it in <b>C</b>. With enough logic you can find a way to make the game with <b><i>2D arrays</i></b> as the grid, just picture it as a grid of tiles, and each tile has a custom <b>data structure</b> that holds values and the state of the tile in the grid - <i>it's that easy :)</i> <b>*dies*</b></p>
+          <p>So here I am remaking it again as a mini web game in <b>CodePen</b> with help from fellow programmer <b><i>@MattXA25</i></b>. At first it was supposed to be a final project for school <b>:D</b> <i>but I submited mine a semester after the deadline.</i> Anyway, here's the result ;)</p>
+        </div>
+      </div>
+  
+      <!--MANUAL TAB-->
+      <div class="content" id="MANUAL">
+        <div class="subcontent">
+          <h1 style="margin-bottom: 0;">HOW TO SWEEP MINES</h1>
+          <h3 style="margin-bottom: 32px;">Here's a brief explanation on how to play the premium mine sweeping simulator.</h3>
+          <p><b><i>The MineField</i></b> is the 15 × 15 grid. It is divided into 225 tiles, <i>up to 24%</i> of which can have a mine underneath it. It is <b>YOUR</b> job to mark out all the tiles that're safe to step on. There are around 18 million mines left to be cleared here in total so we'll need your help to clear out the 225 m² areas that we've assigned you.</p>
+          <p>In order to know which tiles have mines inside, you'll need to <b>pay attention to the NUMBER</b> in the tiles. These numbers tell <i>how many mines are there within a one tile radius of its vicinity,</i> in other words they are radar data that show the number of mines within a 3 × 3 area around it.</p>
+          <p><b>For Example,</b> if a tile has the number 3, there are 3 mines around a one tile radius around it. If you've uncovered the 5 tiles around it, including the (middle) tile itself that makes 6 tiles uncovered. With that you'll know that those 6 tiles are safe and since this middle tile with a three has a radar range of 3 × 3 tiles, that means the remaining 3 still covered tiles have got to be mines.</p>
+          <p>PS: There's a twist in this game, some things are different from the original minesweeper game. You'll figure it out by yourself ;) afterall humans are the most intelligent organism known to man.</p>
+          <h3>Now, I hope you can undestand text instructions without visual illustrations and get the job done. <i>!!! GOOD LUCK !!!</i></h3>
+        </div>
+      </div>
+  
+      <!--MINESWEEPER TAB-->
+      <div class="content" id="MINESWEEPER">
+        <div class="subcontent">
+          <div id="GAME-HEADER">
+            <h1>minesWeepeR</h1>
+            <h3>v 1.0 Web edition</h3>
+          </div>
+          <!--THE MINEFIELD / board whatever-->
+          <div id="BOARD">
+            <div id="CURTAINS">
+              <button onclick="startSequence()" id="PLAY_BUTTON">start</button>
+            </div>
+            <div id="MINEFIELD">
+              <button class="box" onclick="theMain(0, 0)">#</button>
+              <button class="box" onclick="theMain(1, 0)">#</button>
+              <button class="box" onclick="theMain(2, 0)">#</button>
+              <button class="box" onclick="theMain(3, 0)">#</button>
+              <button class="box" onclick="theMain(4, 0)">#</button>
+              <button class="box" onclick="theMain(5, 0)">#</button>
+              <button class="box" onclick="theMain(6, 0)">#</button>
+              <button class="box" onclick="theMain(7, 0)">#</button>
+              <button class="box" onclick="theMain(8, 0)">#</button>
+              <button class="box" onclick="theMain(9, 0)">#</button>
+              <button class="box" onclick="theMain(10, 0)">#</button>
+              <button class="box" onclick="theMain(11, 0)">#</button>
+              <button class="box" onclick="theMain(12, 0)">#</button>
+              <button class="box" onclick="theMain(13, 0)">#</button>
+              <button class="box" onclick="theMain(14, 0)">#</button>
+  
+              <button class="box" onclick="theMain(0, 1)">#</button>
+              <button class="box" onclick="theMain(1, 1)">#</button>
+              <button class="box" onclick="theMain(2, 1)">#</button>
+              <button class="box" onclick="theMain(3, 1)">#</button>
+              <button class="box" onclick="theMain(4, 1)">#</button>
+              <button class="box" onclick="theMain(5, 1)">#</button>
+              <button class="box" onclick="theMain(6, 1)">#</button>
+              <button class="box" onclick="theMain(7, 1)">#</button>
+              <button class="box" onclick="theMain(8, 1)">#</button>
+              <button class="box" onclick="theMain(9, 1)">#</button>
+              <button class="box" onclick="theMain(10, 1)">#</button>
+              <button class="box" onclick="theMain(11, 1)">#</button>
+              <button class="box" onclick="theMain(12, 1)">#</button>
+              <button class="box" onclick="theMain(13, 1)">#</button>
+              <button class="box" onclick="theMain(14, 1)">#</button>
+  
+              <button class="box" onclick="theMain(0, 2)">#</button>
+              <button class="box" onclick="theMain(1, 2)">#</button>
+              <button class="box" onclick="theMain(2, 2)">#</button>
+              <button class="box" onclick="theMain(3, 2)">#</button>
+              <button class="box" onclick="theMain(4, 2)">#</button>
+              <button class="box" onclick="theMain(5, 2)">#</button>
+              <button class="box" onclick="theMain(6, 2)">#</button>
+              <button class="box" onclick="theMain(7, 2)">#</button>
+              <button class="box" onclick="theMain(8, 2)">#</button>
+              <button class="box" onclick="theMain(9, 2)">#</button>
+              <button class="box" onclick="theMain(10, 2)">#</button>
+              <button class="box" onclick="theMain(11, 2)">#</button>
+              <button class="box" onclick="theMain(12, 2)">#</button>
+              <button class="box" onclick="theMain(13, 2)">#</button>
+              <button class="box" onclick="theMain(14, 2)">#</button>
+  
+              <button class="box" onclick="theMain(0, 3)">#</button>
+              <button class="box" onclick="theMain(1, 3)">#</button>
+              <button class="box" onclick="theMain(2, 3)">#</button>
+              <button class="box" onclick="theMain(3, 3)">#</button>
+              <button class="box" onclick="theMain(4, 3)">#</button>
+              <button class="box" onclick="theMain(5, 3)">#</button>
+              <button class="box" onclick="theMain(6, 3)">#</button>
+              <button class="box" onclick="theMain(7, 3)">#</button>
+              <button class="box" onclick="theMain(8, 3)">#</button>
+              <button class="box" onclick="theMain(9, 3)">#</button>
+              <button class="box" onclick="theMain(10, 3)">#</button>
+              <button class="box" onclick="theMain(11, 3)">#</button>
+              <button class="box" onclick="theMain(12, 3)">#</button>
+              <button class="box" onclick="theMain(13, 3)">#</button>
+              <button class="box" onclick="theMain(14, 3)">#</button>
+  
+              <button class="box" onclick="theMain(0, 4)">#</button>
+              <button class="box" onclick="theMain(1, 4)">#</button>
+              <button class="box" onclick="theMain(2, 4)">#</button>
+              <button class="box" onclick="theMain(3, 4)">#</button>
+              <button class="box" onclick="theMain(4, 4)">#</button>
+              <button class="box" onclick="theMain(5, 4)">#</button>
+              <button class="box" onclick="theMain(6, 4)">#</button>
+              <button class="box" onclick="theMain(7, 4)">#</button>
+              <button class="box" onclick="theMain(8, 4)">#</button>
+              <button class="box" onclick="theMain(9, 4)">#</button>
+              <button class="box" onclick="theMain(10, 4)">#</button>
+              <button class="box" onclick="theMain(11, 4)">#</button>
+              <button class="box" onclick="theMain(12, 4)">#</button>
+              <button class="box" onclick="theMain(13, 4)">#</button>
+              <button class="box" onclick="theMain(14, 4)">#</button>
+  
+              <button class="box" onclick="theMain(0, 5)">#</button>
+              <button class="box" onclick="theMain(1, 5)">#</button>
+              <button class="box" onclick="theMain(2, 5)">#</button>
+              <button class="box" onclick="theMain(3, 5)">#</button>
+              <button class="box" onclick="theMain(4, 5)">#</button>
+              <button class="box" onclick="theMain(5, 5)">#</button>
+              <button class="box" onclick="theMain(6, 5)">#</button>
+              <button class="box" onclick="theMain(7, 5)">#</button>
+              <button class="box" onclick="theMain(8, 5)">#</button>
+              <button class="box" onclick="theMain(9, 5)">#</button>
+              <button class="box" onclick="theMain(10, 5)">#</button>
+              <button class="box" onclick="theMain(11, 5)">#</button>
+              <button class="box" onclick="theMain(12, 5)">#</button>
+              <button class="box" onclick="theMain(13, 5)">#</button>
+              <button class="box" onclick="theMain(14, 5)">#</button>
+  
+              <button class="box" onclick="theMain(0, 6)">#</button>
+              <button class="box" onclick="theMain(1, 6)">#</button>
+              <button class="box" onclick="theMain(2, 6)">#</button>
+              <button class="box" onclick="theMain(3, 6)">#</button>
+              <button class="box" onclick="theMain(4, 6)">#</button>
+              <button class="box" onclick="theMain(5, 6)">#</button>
+              <button class="box" onclick="theMain(6, 6)">#</button>
+              <button class="box" onclick="theMain(7, 6)">#</button>
+              <button class="box" onclick="theMain(8, 6)">#</button>
+              <button class="box" onclick="theMain(9, 6)">#</button>
+              <button class="box" onclick="theMain(10, 6)">#</button>
+              <button class="box" onclick="theMain(11, 6)">#</button>
+              <button class="box" onclick="theMain(12, 6)">#</button>
+              <button class="box" onclick="theMain(13, 6)">#</button>
+              <button class="box" onclick="theMain(14, 6)">#</button>
+  
+              <button class="box" onclick="theMain(0, 7)">#</button>
+              <button class="box" onclick="theMain(1, 7)">#</button>
+              <button class="box" onclick="theMain(2, 7)">#</button>
+              <button class="box" onclick="theMain(3, 7)">#</button>
+              <button class="box" onclick="theMain(4, 7)">#</button>
+              <button class="box" onclick="theMain(5, 7)">#</button>
+              <button class="box" onclick="theMain(6, 7)">#</button>
+              <button class="box" onclick="theMain(7, 7)">#</button>
+              <button class="box" onclick="theMain(8, 7)">#</button>
+              <button class="box" onclick="theMain(9, 7)">#</button>
+              <button class="box" onclick="theMain(10, 7)">#</button>
+              <button class="box" onclick="theMain(11, 7)">#</button>
+              <button class="box" onclick="theMain(12, 7)">#</button>
+              <button class="box" onclick="theMain(13, 7)">#</button>
+              <button class="box" onclick="theMain(14, 7)">#</button>
+  
+              <button class="box" onclick="theMain(0, 8)">#</button>
+              <button class="box" onclick="theMain(1, 8)">#</button>
+              <button class="box" onclick="theMain(2, 8)">#</button>
+              <button class="box" onclick="theMain(3, 8)">#</button>
+              <button class="box" onclick="theMain(4, 8)">#</button>
+              <button class="box" onclick="theMain(5, 8)">#</button>
+              <button class="box" onclick="theMain(6, 8)">#</button>
+              <button class="box" onclick="theMain(7, 8)">#</button>
+              <button class="box" onclick="theMain(8, 8)">#</button>
+              <button class="box" onclick="theMain(9, 8)">#</button>
+              <button class="box" onclick="theMain(10, 8)">#</button>
+              <button class="box" onclick="theMain(11, 8)">#</button>
+              <button class="box" onclick="theMain(12, 8)">#</button>
+              <button class="box" onclick="theMain(13, 8)">#</button>
+              <button class="box" onclick="theMain(14, 8)">#</button>
+  
+              <button class="box" onclick="theMain(0, 9)">#</button>
+              <button class="box" onclick="theMain(1, 9)">#</button>
+              <button class="box" onclick="theMain(2, 9)">#</button>
+              <button class="box" onclick="theMain(3, 9)">#</button>
+              <button class="box" onclick="theMain(4, 9)">#</button>
+              <button class="box" onclick="theMain(5, 9)">#</button>
+              <button class="box" onclick="theMain(6, 9)">#</button>
+              <button class="box" onclick="theMain(7, 9)">#</button>
+              <button class="box" onclick="theMain(8, 9)">#</button>
+              <button class="box" onclick="theMain(9, 9)">#</button>
+              <button class="box" onclick="theMain(10, 9)">#</button>
+              <button class="box" onclick="theMain(11, 9)">#</button>
+              <button class="box" onclick="theMain(12, 9)">#</button>
+              <button class="box" onclick="theMain(13, 9)">#</button>
+              <button class="box" onclick="theMain(14, 9)">#</button>
+  
+              <button class="box" onclick="theMain(0, 10)">#</button>
+              <button class="box" onclick="theMain(1, 10)">#</button>
+              <button class="box" onclick="theMain(2, 10)">#</button>
+              <button class="box" onclick="theMain(3, 10)">#</button>
+              <button class="box" onclick="theMain(4, 10)">#</button>
+              <button class="box" onclick="theMain(5, 10)">#</button>
+              <button class="box" onclick="theMain(6, 10)">#</button>
+              <button class="box" onclick="theMain(7, 10)">#</button>
+              <button class="box" onclick="theMain(8, 10)">#</button>
+              <button class="box" onclick="theMain(9, 10)">#</button>
+              <button class="box" onclick="theMain(10, 10)">#</button>
+              <button class="box" onclick="theMain(11, 10)">#</button>
+              <button class="box" onclick="theMain(12, 10)">#</button>
+              <button class="box" onclick="theMain(13, 10)">#</button>
+              <button class="box" onclick="theMain(14, 10)">#</button>
+  
+              <button class="box" onclick="theMain(0, 11)">#</button>
+              <button class="box" onclick="theMain(1, 11)">#</button>
+              <button class="box" onclick="theMain(2, 11)">#</button>
+              <button class="box" onclick="theMain(3, 11)">#</button>
+              <button class="box" onclick="theMain(4, 11)">#</button>
+              <button class="box" onclick="theMain(5, 11)">#</button>
+              <button class="box" onclick="theMain(6, 11)">#</button>
+              <button class="box" onclick="theMain(7, 11)">#</button>
+              <button class="box" onclick="theMain(8, 11)">#</button>
+              <button class="box" onclick="theMain(9, 11)">#</button>
+              <button class="box" onclick="theMain(10, 11)">#</button>
+              <button class="box" onclick="theMain(11, 11)">#</button>
+              <button class="box" onclick="theMain(12, 11)">#</button>
+              <button class="box" onclick="theMain(13, 11)">#</button>
+              <button class="box" onclick="theMain(14, 11)">#</button>
+  
+              <button class="box" onclick="theMain(0, 12)">#</button>
+              <button class="box" onclick="theMain(1, 12)">#</button>
+              <button class="box" onclick="theMain(2, 12)">#</button>
+              <button class="box" onclick="theMain(3, 12)">#</button>
+              <button class="box" onclick="theMain(4, 12)">#</button>
+              <button class="box" onclick="theMain(5, 12)">#</button>
+              <button class="box" onclick="theMain(6, 12)">#</button>
+              <button class="box" onclick="theMain(7, 12)">#</button>
+              <button class="box" onclick="theMain(8, 12)">#</button>
+              <button class="box" onclick="theMain(9, 12)">#</button>
+              <button class="box" onclick="theMain(10, 12)">#</button>
+              <button class="box" onclick="theMain(11, 12)">#</button>
+              <button class="box" onclick="theMain(12, 12)">#</button>
+              <button class="box" onclick="theMain(13, 12)">#</button>
+              <button class="box" onclick="theMain(14, 12)">#</button>
+  
+              <button class="box" onclick="theMain(0, 13)">#</button>
+              <button class="box" onclick="theMain(1, 13)">#</button>
+              <button class="box" onclick="theMain(2, 13)">#</button>
+              <button class="box" onclick="theMain(3, 13)">#</button>
+              <button class="box" onclick="theMain(4, 13)">#</button>
+              <button class="box" onclick="theMain(5, 13)">#</button>
+              <button class="box" onclick="theMain(6, 13)">#</button>
+              <button class="box" onclick="theMain(7, 13)">#</button>
+              <button class="box" onclick="theMain(8, 13)">#</button>
+              <button class="box" onclick="theMain(9, 13)">#</button>
+              <button class="box" onclick="theMain(10, 13)">#</button>
+              <button class="box" onclick="theMain(11, 13)">#</button>
+              <button class="box" onclick="theMain(12, 13)">#</button>
+              <button class="box" onclick="theMain(13, 13)">#</button>
+              <button class="box" onclick="theMain(14, 13)">#</button>
+  
+              <button class="box" onclick="theMain(0, 14)">#</button>
+              <button class="box" onclick="theMain(1, 14)">#</button>
+              <button class="box" onclick="theMain(2, 14)">#</button>
+              <button class="box" onclick="theMain(3, 14)">#</button>
+              <button class="box" onclick="theMain(4, 14)">#</button>
+              <button class="box" onclick="theMain(5, 14)">#</button>
+              <button class="box" onclick="theMain(6, 14)">#</button>
+              <button class="box" onclick="theMain(7, 14)">#</button>
+              <button class="box" onclick="theMain(8, 14)">#</button>
+              <button class="box" onclick="theMain(9, 14)">#</button>
+              <button class="box" onclick="theMain(10, 14)">#</button>
+              <button class="box" onclick="theMain(11, 14)">#</button>
+              <button class="box" onclick="theMain(12, 14)">#</button>
+              <button class="box" onclick="theMain(13, 14)">#</button>
+              <button class="box" onclick="theMain(14, 14)">#</button>
+            </div>
+          </div>
+  
+          <div id="STATS2">
+            <h3>SECTOR <span class="SECTOR">X</span></h3>
+            <h3><span class="MINES">X</span> MINES DETECTED.</h3>
+            <button onclick="checkWin()">submit</button>
+            <h3>-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-</h3>
+            <p class="RESPONSES"></p>
+          </div>
+  
+          <div id="THEME_BAR">
+            <h3 style="color: var(--box-color);">Themes :</h3>
+            <button id="ONE" onclick="switchTheme(event, '1')">default</button>
+            <button id="TWO" onclick="switchTheme(event, '2')">caution</button>
+            <button id="THREE" onclick="switchTheme(event, '3')">Analog gReen</button>
+            <button id="FOUR" onclick="switchTheme(event, '4')">Analog oRange</button>
+            <button id="FIVE" onclick="switchTheme(event, '5')">monochrome</button>
+          </div>
+        </div>
+      </div>
+  
+      <!--DEVELOPMENT TAB-->
+      <div class="content" id="DEVELOPMENT">
+        <div class="subcontent">
+          <h1>The [ DEV LOG ]</h1>
+          <h3>Here's a brief description about the game's development. *actually its not a devlog anymore but idc devlog sounds nice*</h3>
+  
+          <p><b>It Hard.</b> Making this sure took a while, around a week of time was spent in total on developing all this in the span of about a month. Starting from somewhere in mid of November(I forgor) until 30th December where the JS for the game is finally finished - but I'll have revisits and revisions sometime later.</p>
+          <p>There's still quite a few flaws in the code design, one of which is my lack of knowledge in "unobtrusive web design" where I should've tried my best to <b>NOT</b> put other language's code(either CSS/JS) in the HTML. Initially, I thought it's better to put short stylings for specific elements directly in the HTML element rather than spending a few more lines of code in the CSS but generally most professionals prefer not to to keep their HMTL lookin' neat. Another thing is the use of onclick attributes which apparently breaks the rules of unobtrusive web design. I should've mastered how to use .addEventListener() instead so I don't need onclick's containing JS functions but shoot I learned this mid way of finishing the JS from someone's answer in StackOverflow made 11 years ago :/ Just next time ig.</p>
+          <p>In the beginning of development this section was supposed to contain a short explanation on how the JS (for the game) works but damn I'm too mind-numbed by the process of making the web game already so screw it, I just wish the best of luck to you fellow noobs who's somehow also in the middle of trying to make minesweeper and stumbled upon this Pen I made :) Oh and as a former C user I'm glad JS syntax is almost exactly the same as C, I love going high on syntactic sugars and putting semicolons at the end of every line :D</p>
+          <p>That's all I have to say for this filler tab, kudos if you read it all the way here, one more to go !</p>
+        </div>
+      </div>
+  
+      <!--CREDITS & SAUCES TAB-->
+      <div class="content" id="CREDITS">
+        <div class="subcontent">
+          <h1>SOURCES</h1>
+          <h3>Image Sources :</h3>
+          <ul>
+            <li><a href="https://unsplash.com/">UnSplash for <i>High quality images</i></a></li>
+            <li><a href="https://upload.wikimedia.org/wikipedia/commons/8/80/Falklands-Minefield.JPG">An image from WikiPedia</a></li>
+          </ul>
+          <h3>Other Sources :</h3>
+          <ul>
+            <li><a href="https://fontawesome.com">FontAwesome to get those free icons</a></li>
+            <li><a href="https://fonts.google.com/">Google Fonts for premium font <i>sauce</i></a></li>
+            <li><a href="https://cs50.harvard.edu/x/2022/">Website from the guys I owe a debt for making their course accessible for free which enabled me to have a strong foundation in the world of CS.</a></li>
+          </ul>
+  
+          <h3 style="margin-top: 4rem;">Another paragraph to fill this tab</h3>
+          <p>The name of the project doesn't have any meaning. "Minesweeper" is a bit too long so I shortened it to <b>Mindswept</b> for some reason. The repeated usage of the word <b>"Mind-numbing"</b> is just because I like that word and it describes how it feels to make a messy code and having to read it several times for debugging. That's all I can think of to put here, after all this tab is just to fill the NavBar a bit just like the others:) Thx for checking out my web game ig. <b><i>Heppy New Year.</i></b></p>
+  
+          <div class="contacts c2">
+            <p><i class="fa-brands fa-instagram"></i> @sitrus_limau</p>
+            <a href="https://codepen.io/stephensq"><i class="fa-brands fa-codepen"></i> @StephenSQ</a>
+            <a href="https://codepen.io/MattXA25"><i class="fa-brands fa-codepen"></i> @MattXA25</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

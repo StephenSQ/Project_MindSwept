@@ -1,6 +1,452 @@
-body {
+:root {
+    --cool-grey: #141f1f;
+    --cool-green: #669999;
+    --cool-blue: #7070ff;
+    --cool-magenta: #cc0052;
+    --cool-orange: #ff8820;
+    --light-magenta: rgba(255, 51, 51, 0.5);
+    --box-background: ;
+    --box-border: ;
+    --box-color: ;
+  }
+  * {
     margin: 0;
     padding: 0;
+    color: #ffffff;
     box-sizing: border-box;
-    background-color: black;
-}
+    word-break: break-word;
+  }
+  html,
+  body {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+  }
+  div {
+    /*all div tags are set to flexbox by default*/
+    display: flex;
+  }
+  button {
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+    text-align: inherit;
+  }
+  a {
+    display: block;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  a:hover {
+    scale: 0.95;
+  }
+  /* NAVIGATION BAR STUFF */
+  .nav_bar {
+    flex-flow: column;
+    flex: 1 0 auto;
+    position: fixed;
+    overflow-y: auto;
+    height: 100%;
+    width: 330px;
+    z-index: 1;
+    font-size: 100%; /*nav_bar's font-size effects all its child elements*/
+    background-color: #000000;
+    border-right: 2px ridge var(--light-magenta);
+    font-family: "Major Mono Display", monospace;
+  }
+  .seperate {
+    flex-flow: column;
+    height: 100%;
+    padding: 16px;
+  }
+  .header {
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  .header-text {
+    flex-flow: column;
+  }
+  #mindswept h1 {
+    display: block;
+    transition: color 0.2s ease-out;
+  }
+  #mindswept h1:hover {
+    color: #c0c0c0;
+  }
+  .fa-land-mine-on {
+    font-size: 250%;
+    margin: 8px 8px 8px 16px;
+    cursor: pointer;
+    position: relative;
+    transition: 0.5s;
+  }
+  .fa-land-mine-on:hover {
+    color: #505050;
+    scale: 0.9;
+  }
+  
+  .nav_bar-items {
+    flex-flow: column;
+    justify-content: space-between;
+    margin-top: 32px;
+    padding-left: 8px;
+    font-family: "PT Sans", sans-serif;
+    font-size: 100%;
+    height: 100%;
+  }
+  .nav_bar-items img {
+    height: 128px;
+    width: 100%;
+    opacity: 0.1;
+    border-radius: 16px;
+  }
+  .nav_bar-buttons {
+    flex-flow: column;
+  }
+  .tab {
+    display: block;
+    word-spacing: 8px;
+    font-size: 120%;
+    font-weight: bold;
+    padding: 4px;
+    border-radius: 4px;
+    transition: 0.3s ease-out;
+  }
+  .tab:hover {
+    background-color: var(--cool-blue);
+    box-shadow: 5rem 0px 64px var(--cool-green) inset;
+    text-shadow: 2px 2px 4px #303030;
+    scale: 1.05;
+  }
+  .tab.active {
+    background-color: var(--cool-orange);
+    box-shadow: 5rem 0px 64px var(--cool-magenta) inset;
+    text-shadow: 2px 2px 4px #303030;
+    scale: 1.05;
+  }
+  .contacts {
+    flex-flow: row wrap;
+    justify-content: space-between;
+    font-size: 110%;
+    padding: 8px;
+  }
+  .contacts div {
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /*CONTENT STARTS HERE*/
+  .content-container {
+    flex-flow: column;
+    flex: 1 1 auto;
+    width: 100%;
+    margin-left: 330px;
+    background: #000000
+      url("https://upload.wikimedia.org/wikipedia/commons/8/80/Falklands-Minefield.JPG")
+      center no-repeat;
+    font-family: "PT Sans", sans-serif;
+    font-size: 110%;
+  }
+  .content {
+    display: none;
+    flex-flow: column;
+    flex: 1 0 auto;
+    text-indent: 4rem;
+    text-align: justify;
+    line-height: 1.6;
+    transition: 0.5s;
+    filter: contrast(150%);
+  }
+  .subcontent {
+    flex-flow: column;
+    flex: 1 0 auto;
+    padding: 64px 10%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .content h1 {
+    margin-bottom: 32px;
+    text-indent: 0;
+  }
+  .content h3 {
+    text-indent: 0;
+  }
+  .content p {
+    margin: 8px 0;
+  }
+  .content ul {
+    text-indent: 2rem;
+    list-style-type: none;
+  }
+  
+  #BACKGROUND {
+    background: var(--cool-grey)
+      url("https://images.unsplash.com/photo-1576457401692-b52975362ca0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80")
+      center/100% no-repeat fixed;
+  }
+  #MANUAL {
+    background: var(--cool-grey)
+      url("https://images.unsplash.com/photo-1535815104204-1282638c01f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80")
+      center/100% no-repeat fixed;
+  }
+  #DEVELOPMENT {
+    background: var(--cool-grey)
+      url("https://images.unsplash.com/photo-1521567602683-a6760a3a2cc3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80")
+      center/100% no-repeat fixed;
+  }
+  #CREDITS {
+    text-indent: 0;
+    background: var(--cool-grey)
+      url("https://images.unsplash.com/photo-1623578540859-adf2416e09b3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80")
+      center/100% no-repeat fixed;
+  }
+  
+  /*THE NAV CURTAIN*/
+  #NAV_CURTAIN {
+    display: none;
+    flex-flow: column;
+    flex: 1 0 auto;
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    padding: 16px;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    text-align: justify;
+    line-height: 1.6;
+    transition: 0.5s ease-in-out;
+  }
+  
+  #NAV_CURTAIN button {
+    margin-left: 50;
+    padding: 4px;
+    margin-top: 8px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 4px;
+    border: 2px ridge #ffcc00;
+    color: #ffcc00;
+    transition: 0.3s ease-out;
+  }
+  /*MINESWEEPER SECTION STYLING*/
+  #STATS {
+    display: none;
+    flex-flow: column;
+    margin: 4px 0 8px 16px;
+    padding: 8px;
+    max-width: 275px;
+    border-radius: 8px;
+    border: 4px ridge var(--light-magenta);
+    transition: 0.5s ease-out;
+  }
+  #STATS button, #STATS2 button {
+    padding: 4px;
+    margin-left: 50%;
+    margin-top: 8px;
+    font-weight: bold;
+    font-family: "Major Mono Display", monospace;
+    text-align: center;
+    border-radius: 4px;
+    border: 2px ridge #ffcc00;
+    color: #ffcc00;
+    transition: 0.3s ease-out;
+  }
+  #STATS button:hover, #STATS2 button:hover {
+    scale: 1.1;
+  }
+  .RESPONSES {
+    margin-top: 8px;
+  }
+  #BOARD {
+    flex-flow: column;
+  }
+  #CURTAINS {
+    width: 80%;
+    aspect-ratio: 1;
+    flex-flow: column;
+    flex: 1 0 auto;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 4px;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+  }
+  #PLAY_BUTTON {
+    flex-flow: column;
+    padding: 8px;
+    border-radius: 8px;
+    border: 2px solid var(--box-border);
+    background-color: var(--box-background);
+    color: var(--box-color);
+    font-weight: bold;
+    font-size: 150%;
+    transition: 0.5s;
+  }
+  #PLAY_BUTTON:hover {
+    scale: 1.2;
+  }
+  
+  #MINESWEEPER h1,
+  p {
+    margin: 0;
+  }
+  #MINESWEEPER {
+    text-indent: 0;
+    font-family: "Major Mono Display", monospace;
+    background: var(--cool-grey)
+      url("https://images.unsplash.com/photo-1544888973-072b36e5a590?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80")
+      center/100% no-repeat fixed;
+  }
+  
+  #GAME-HEADER {
+    flex-flow: column;
+    align-items: center;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    border: 4px ridge var(--light-magenta);
+    background-color: rgba(0, 10, 10, 0.1);
+  }
+  #MINEFIELD {
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    gap: 8px;
+  }
+  .box {
+    background-color: var(--box-background);
+    transition: 0.3s ease-out;
+    border-radius: 4px;
+    border: 2px solid var(--box-border);
+    color: var(--box-color);
+    text-align: center;
+    font-weight: bold;
+    font-size: 150%;
+    aspect-ratio: 1;
+  }
+  .box:hover {
+    scale: 1.1;
+  }
+  #THEME_BAR {
+    flex-flow: column;
+    justify-items: space-between;
+    background-color: var(--box-background);
+    border: 2px solid var(--box-border);
+    border-radius: 8px;
+    transition: 0.3s;
+    margin-top: 64px;
+    padding: 16px;
+    gap: 8px;
+  }
+  #THEME_BAR button {
+    position: relative;
+    border-radius: 4px;
+    width: 50%;
+    padding: 8px;
+    font-weight: bold;
+  }
+  #THEME_BAR button:hover,
+  button.active {
+    left: 16px;
+  }
+  #THEME_BAR #ONE {
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(255, 51, 51, 0.5);
+    color: #ffffff;
+  }
+  #THEME_BAR #TWO {
+    background-color: #303030;
+    border: 2px solid #ffcc00;
+    color: #ffcc00;
+  }
+  #THEME_BAR #THREE {
+    background-color: #202f2f;
+    border: 2px solid #008000;
+    color: #33ff33;
+  }
+  #THEME_BAR #FOUR {
+    background-color: #4d2e00;
+    border: 2px solid #e69d00;
+    color: #ffcc00;
+  }
+  #THEME_BAR #FIVE {
+    background-color: #404040;
+    border: 2px solid #a0a0a0;
+    color: #ffffff;
+  }
+  #STATS2 {
+    display: none;
+    flex-flow: column;
+    width: auto;
+    font-family: "PT Sans", sans-serif;
+    margin: 16px 0px 0px;
+    padding: 8px;
+    background-color: #000000;
+    border-radius: 8px;
+    border: 4px ridge var(--light-magenta);
+    transition: 0.5s ease-out;
+  }
+  
+  .c2 {
+    display: none;
+  }
+  /*MEDIA STUFF FOR RESPONSIVENESS*/
+  @media screen and (max-width: 1070px) {
+    .nav_bar {
+      flex-flow: row;
+      width: 100%;
+      height: auto;
+      border-bottom: 2px ridge var(--light-magenta);
+    }
+    .nav_bar-items {
+      display: none;
+    }
+    .content-container {
+      margin: 109px 0px 0px;
+    }
+    .content {
+      display: flex;
+    }
+    #STATS2 {
+      display: flex;
+    }
+    .c2 {
+      display: flex;
+    }
+  }
+  @media screen and (max-width: 740px) {
+    .nav_bar {
+      font-size: 80%;
+    }
+    .content-container {
+      margin-top: 100px;
+    }
+    .box {
+      font-size: 70%;
+    }
+    #MINEFIELD {
+      gap: 4px;
+    }
+    #THEME_BAR button {
+      width: 100%;
+    }
+  }
+  @media screen and (max-width: 390px) {
+    #GAME-HEADER {
+      font-size: 90%;
+    }
+    .box {
+      font-size: 60%;
+      border: 1px solid var(--box-border);
+    }
+    .contacts {
+      flex-flow: column;
+    }
+  }  
