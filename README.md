@@ -34,9 +34,10 @@ woah how nice :)
 
 ## Alright. Now on to links :
 
-The text to be linked are enclosed with [ ] immidiately followed by a ( ) to enclose the link. Here's where I learned this :( ) 
+The text to be linked are enclosed with [ ] immidiately followed by a ( ) to enclose the link.  
+Here's where I learned this :( ) 
 [Markdown Syntax Guide](https://www.markdownguide.org/basic-syntax/#links "add a link title to appear upon hover with quotation marks :() HOW AMAZING IS THAT ?")  
-"To quickly turn a URL or email address into a link, enclose it in angle brackets. :"
+"To quickly turn a URL or email address into a link, enclose it in angle brackets." :
 <https://www.markdownguide.org/basic-syntax/#links>  
 <quandale008@goofyahh.com>  
 It can also be formatted like usual ***<https://www.markdownguide.org/basic-syntax/#links>***  
@@ -61,7 +62,7 @@ It can also be formatted like usual ***<https://www.markdownguide.org/basic-synt
 
 ## WOAH IMAGES ???
 
-"To add an image, add an exclamation mark (!), followed by alt text in brackets, and the path or URL to the image asset in parentheses. You can optionally add a title in quotation marks after the path or URL."
+"To add an image, add an exclamation mark ( ! ), followed by alt text in brackets, and the path or URL to the image asset in parentheses. You can optionally add a title in quotation marks after the path or URL."
 
 ![This will be the alt text](https://static.wikia.nocookie.net/gtawiki/images/7/70/CJ-GTASA.png/revision/latest?cb=20190612091918)
 
