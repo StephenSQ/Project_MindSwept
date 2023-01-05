@@ -4,6 +4,13 @@ My first attempt in making a complete website which happens to be a simple mines
 This is a repo where I put a copy of it and I'm also using this to practice using Git and Github.  
 That's all I have to say, now I'll use this readme file to practice markdown syntax
 
+<p class="codepen" data-height="300" data-default-tab="result" data-slug-hash="PoabeJm" data-user="stephensq" style="height: 600px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/stephensq/pen/PoabeJm">
+  Mindnumbing Minesweeper</a> by StephenSQ (<a href="https://codepen.io/stephensq">@stephensq</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
 ## two dashes for a subheader huh ?
 
 *one asterisk on both sides for italics ?* alright.  
