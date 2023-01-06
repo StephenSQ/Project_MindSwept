@@ -2,6 +2,10 @@
 
 My first attempt in making a complete website which happens to be a simple minesweeper web game - first made in CodePen.  
 This is a repo where I put a copy of it and I'm also using this to practice using Git and Github.  
+
+Here's the full website on [CodePen.](https://codepen.io/stephensq/full/PoabeJm "The Full Page View")  
+Here's the one with [Its code.](https://codepen.io/stephensq/pen/PoabeJm "Along With Its Code")
+
 That's all I have to say, now I'll use this readme file to practice markdown syntax
 
 ## two dashes for a subheader huh ?
@@ -28,7 +32,7 @@ That's all I have to say, now I'll use this readme file to practice markdown syn
 ```html
 <body>  
     <h1>html header be like :</h1>
-</body>
+</body
 ```
 woah how nice :)
 
